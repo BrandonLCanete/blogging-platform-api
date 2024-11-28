@@ -13,7 +13,12 @@ class Config:
     JWT_ACCESS_TOKEN_EXPIRES = timedelta(minutes=int(os.getenv('JWT_ACCESS_TOKEN_EXPIRES', 15)))
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     FLASK_ENV = os.getenv('FLASK_ENV', 'development')
-
+    JWT_TOKEN_LOCATION = ["cookies"]
+    JWT_ACCESS_COOKIE_NAME = "access_token_cookie"
+    JWT_COOKIE_CSRF_PROTECT = False
+    JWT_ACCESS_CSRF_HEADER_NAME = "X-CSRF-TOKEN"
+    JWT_COOKIE_SECURE = False
+    JWT_COOKIE_HTTPONLY = False
     if FLASK_ENV == 'production':
         SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL_PRODUCTION')
         SQLALCHEMY_ENGINE_OPTIONS = {}  # No SSL in production (or customize as needed)

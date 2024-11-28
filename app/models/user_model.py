@@ -1,4 +1,5 @@
 import uuid
+
 from sqlalchemy.dialects.mysql import CHAR
 from app.extension import db
 
@@ -16,3 +17,5 @@ class UserModel(db.Model):
     deleted_at = db.Column(db.DateTime, nullable=True)
 
     posts = db.relationship("PostModel", backref="user", lazy=True)
+    comments = db.relationship("CommentModel", backref="user", lazy=True)
+    share = db.relationship("ShareModel", backref="user", lazy=True)
