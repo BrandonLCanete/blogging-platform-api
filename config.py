@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Config:
-    API_TITLE = "RESTAURANT API"
+    API_TITLE = "BLOGGING PLATFROM API"
     API_VERSION = "v1"
     OPENAPI_VERSION = "3.0.3"
     SECRET_KEY = os.getenv('SECRET_KEY')
